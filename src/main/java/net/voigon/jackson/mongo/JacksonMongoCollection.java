@@ -116,6 +116,9 @@ public class JacksonMongoCollection<T> {
 
 	public T documentToValue(Document document) {
 		
+		if (document == null)
+			return null;
+		
 		if (document.containsKey("_id"))
 			document.remove("_id");
 		
